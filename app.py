@@ -119,5 +119,7 @@ def main():
                 else:
                     st.error("Incorrect password. Try again!")
 
+    st.write("Created by Regina Chitralla")
+
 if __name__ == "__main__":
     main()
