@@ -24,9 +24,9 @@ def philosophical_puzzle_solver():
     options = ["Plato", "Aristotle", "Descartes", "Socrates"]
     correct_answer = "Descartes"
     
-    user_answer = st.radio(puzzle, options)  # Remove index=-1 to avoid pre-selection error
+    user_answer = st.radio(puzzle, options, key="puzzle_radio")  # Use a key to avoid conflict
     
-    if st.button("Submit Puzzle Answer"):
+    if st.button("Submit Puzzle Answer", key="puzzle_submit"):
         if user_answer:
             if user_answer == correct_answer:
                 st.success("Correct! Here is a clip from behind the scenes.")
@@ -48,23 +48,30 @@ def philosopher_or_psychic():
     ]
 
     st.title("Philosopher or Psychic?")
-
     st.write("Decide if the following quotes are from a famous philosopher or a psychic.")
 
     score = 0
     total_questions = len(quiz_data)
 
     for i, item in enumerate(quiz_data):
-        st.write(f"Quote {i + 1}: {item['quote']}")
-        user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}")
+        if f"answered_{i}" not in st.session_state:
+            st.session_state[f"answered_{i}"] = False
 
-        if st.button(f"Submit Answer {i + 1}"):
-            if user_answer:
-                if user_answer == item["answer"]:
-                    st.success(f"Correct! This quote is from {item['source']}.")
-                    score += 1
-                else:
-                    st.error(f"Incorrect. This quote is from {item['source']}.")
+        st.write(f"Quote {i + 1}: {item['quote']}")
+        if not st.session_state[f"answered_{i}"]:
+            user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}")
+
+            if st.button(f"Submit Answer {i + 1}", key=f"submit_{i}"):
+                st.session_state[f"user_answer_{i}"] = user_answer
+                st.session_state[f"answered_{i}"] = True
+
+        if st.session_state[f"answered_{i}"]:
+            user_answer = st.session_state[f"user_answer_{i}"]
+            if user_answer == item["answer"]:
+                st.success(f"Correct! This quote is from {item['source']}.")
+                score += 1
+            else:
+                st.error(f"Incorrect. This quote is from {item['source']}.")
 
     st.write(f"Your final score is {score} out of {total_questions}")
 
@@ -76,7 +83,7 @@ def main():
     shift1 = 3
     youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
 
-    st.write("Decrypt the following message to get a special YouTube link (Hint: Its an ancient encryption method):")
+    st.write("Decrypt the following message to get a special YouTube link:")
     st.write(f"Encrypted message: **{encrypted_message1}**")
 
     user_input1 = st.text_input("Enter the decrypted message here:", key="input1")
