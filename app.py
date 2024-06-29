@@ -24,7 +24,7 @@ def philosophical_puzzle_solver():
     options = ["Plato", "Aristotle", "Descartes", "Socrates"]
     correct_answer = "Descartes"
     
-    user_answer = st.radio(puzzle, options, index=-1)  # index=-1 ensures no option is pre-selected
+    user_answer = st.radio(puzzle, options)  # Remove index=-1 to avoid pre-selection error
     
     if st.button("Submit Puzzle Answer"):
         if user_answer:
@@ -56,7 +56,7 @@ def philosopher_or_psychic():
 
     for i, item in enumerate(quiz_data):
         st.write(f"Quote {i + 1}: {item['quote']}")
-        user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}", index=-1)  # index=-1 ensures no option is pre-selected
+        user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}")
 
         if user_answer:
             if user_answer == item["answer"]:
