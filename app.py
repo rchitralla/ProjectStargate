@@ -131,11 +131,14 @@ def main():
 
     st.write("Created by Regina Chitralla")
 
-    # Add PayPal donation button using iframe
+    # Add PayPal donation button using HTML form
     st.markdown(
         """
-        <iframe src="https://www.paypal.com/donate?hosted_button_id=8TTFV24WNWLS4" 
-        style="border:0; width:340px; height:100px;" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value="8TTFV24WNWLS4" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
+        </form>
         """,
         unsafe_allow_html=True
     )
