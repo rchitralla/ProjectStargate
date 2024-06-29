@@ -47,5 +47,24 @@ def main():
                 else:
                     st.error("Incorrect password. Try again!")
 
+
+            st.title("Philosophical Puzzle Solver")
+            st.write("Solve the following philosophical puzzle to proceed:")
+            puzzle = ("I think, therefore I am. Who said this famous quote?")
+            options = ["Plato", "Aristotle", "Descartes", "Socrates"]
+            correct_answer = "Descartes"
+            user_answer = st.radio(puzzle, options)
+    
+        if st.button("Submit"):
+            if user_answer == correct_answer:
+                st.success("Correct! Here's a funny clip from the series.")
+                st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")  # Replace with actual clip
+            else:
+                st.error("Incorrect! Try again.")
+            
+if __name__ == "__main__":
+    main()
+
+
 if __name__ == "__main__":
     main()
