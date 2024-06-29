@@ -38,5 +38,16 @@ def main():
         else:
             st.error("Incorrect. Try again!")
 
+ # Second challenge
+            st.write("Now, crack John's password:")
+            st.write("Hint: It's a simple numeric password.")
+            user_input2 = st.text_input("Enter John's password here:")
+
+            if user_input2:
+                if user_input2 == "123":
+                    st.success("Congratulations! You've cracked John's password.")
+                else:
+                    st.error("Incorrect password. Try again!")
+
 if __name__ == "__main__":
     main()
