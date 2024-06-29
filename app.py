@@ -38,7 +38,7 @@ def main():
 
             # Second challenge
             st.write("Now, crack John's password:")
-            st.write("Hint: It's a simple numeric password.")
+            st.write("Hint: John only remembers up to three numbers at a time.")
             user_input2 = st.text_input("Enter John's password here:")
 
             if user_input2:
