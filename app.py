@@ -19,26 +19,24 @@ def decrypt_message(encrypted_message, shift):
 def main():
     st.title("Decrypt the Code to Access a Special Message")
 
-    # Encrypted message and the shift value
-    encrypted_message = "Vohdcb Vwhyh"
-    shift = 3
+    # First encrypted message and the shift value
+    encrypted_message1 = "Vohdcb Vwhyh"
+    shift1 = 3
     youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
 
     st.write("Decrypt the following message to get a special YouTube link:")
-    st.write(f"Encrypted message: **{encrypted_message}**")
+    st.write(f"Encrypted message: **{encrypted_message1}**")
 
-    user_input = st.text_input("Enter the decrypted message here:")
+    user_input1 = st.text_input("Enter the decrypted message here:")
 
-    if user_input:
-        decrypted_message = decrypt_message(encrypted_message, shift)
-        if user_input == decrypted_message:
-            st.success("Congratulations! You've cracked the code. Sleazy Steve is the sleaziest of Sleazes.")
+    if user_input1:
+        decrypted_message1 = decrypt_message(encrypted_message1, shift1)
+        if user_input1 == decrypted_message1:
+            st.success("Congratulations! You've cracked the first code. Sleazy Steve is the sleaziest of Sleazes.")
             st.write("Here is your special YouTube link:")
             st.write(f"[Your YouTube Video]({youtube_link})")
-        else:
-            st.error("Incorrect. Try again!")
 
- # Second challenge
+            # Second challenge
             st.write("Now, crack John's password:")
             st.write("Hint: It's a simple numeric password.")
             user_input2 = st.text_input("Enter John's password here:")
