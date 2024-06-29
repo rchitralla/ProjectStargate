@@ -131,14 +131,14 @@ def main():
 
     st.write("Created by Regina Chitralla")
 
-    # Add PayPal donation button using HTML form
+    # Add PayPal donation button as a clickable link styled as a button
     st.markdown(
         """
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="hidden" name="hosted_button_id" value="8TTFV24WNWLS4" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-        <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
-        </form>
+        <a href="https://www.paypal.com/donate?hosted_button_id=8TTFV24WNWLS4" target="_blank">
+            <button style="background-color:#4CAF50; border:none; color:white; padding:15px 32px; text-align:center; text-decoration:none; display:inline-block; font-size:16px; margin:4px 2px; cursor:pointer;">
+                Donate via PayPal
+            </button>
+        </a>
         """,
         unsafe_allow_html=True
     )
