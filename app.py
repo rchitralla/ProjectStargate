@@ -76,7 +76,7 @@ def philosopher_or_psychic():
             st.error("The file ProjectStargate_Poster_4K.png was not found.")
 
 def main():
-    st.title("Decrypt the Code to Access a Special Message")
+    st.title("Project Stargate - an unscientific comedy: Decrypt the Code to Access our Secrets")
 
     # New riddle and the answer
     riddle = "I am a word often used to describe someone who is disreputable or dishonest. I rhyme with 'breezy' but mean something far from pleasant. What am I?"
