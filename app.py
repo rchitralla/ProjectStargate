@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 def encrypt_message(message, shift):
     encrypted = ""
@@ -105,13 +106,16 @@ def main():
                 if user_input2 == "123":
                     st.success("Congratulations! You've cracked John's password.")
                     st.write("Download your special sticker below:")
-                    with open("sticker.png", "rb") as file:
-                        btn = st.download_button(
-                            label="Download Sticker",
-                            data=file,
-                            file_name="Sure_Drink.pdf",
-                            mime="image/pdf"
-                        )
+                    if os.path.exists("Sure_Drink.pdf"):
+                        with open("Sure_Drink.pdf", "rb") as file:
+                            btn = st.download_button(
+                                label="Download Sticker",
+                                data=file,
+                                file_name="Sure_Drink.pdf",
+                                mime="application/pdf"
+                            )
+                    else:
+                        st.error("The file Sure_Drink.pdf was not found.")
                     philosophical_puzzle_solver()
                     philosopher_or_psychic()
                 else:
