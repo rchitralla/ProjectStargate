@@ -20,7 +20,7 @@ def main():
     st.title("Decrypt the Code to Access a Special Message")
 
     # Encrypted message and the shift value
-    encrypted_message = "VoHD]+=9YHyHY"
+    encrypted_message = "Vohdcb Vwhyh"
     shift = 3
     youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
 
