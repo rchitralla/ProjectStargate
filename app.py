@@ -75,7 +75,7 @@ def main():
     shift1 = 3
     youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
 
-    st.write("Decrypt the following message to get a special YouTube link:")
+    st.write("Decrypt the following message to get a special YouTube link (Note: It's an old encryption method):")
     st.write(f"Encrypted message: **{encrypted_message1}**")
 
     user_input1 = st.text_input("Enter the decrypted message here:", key="input1")
@@ -95,7 +95,7 @@ def main():
 
             if user_input2:
                 if user_input2 == "123":
-                    st.success("Congratulations! You've cracked John's password.")
+                    st.success("Congratulations! You've cracked John's password. He really is THAT stupid.")
                     philosophical_puzzle_solver()
                     philosopher_or_psychic()
                 else:
