@@ -62,6 +62,39 @@ def main():
                 st.video("https://www.youtube.com/watch?v=rG5iCV4xza4&t=46s&ab_channel=ReelStreamVenture")  # Replace with actual clip
             else:
                 st.error("Incorrect! Try again.")
+
+# Quotes or scenarios with their correct answers
+quiz_data = [
+    {"quote": "The only true wisdom is in knowing you know nothing.", "answer": "Philosopher", "source": "Socrates"},
+    {"quote": "I see a great fortune in your future.", "answer": "Psychic", "source": "Generic Psychic"},
+    {"quote": "To be is to do.", "answer": "Philosopher", "source": "Socrates"},
+    {"quote": "I sense a strong aura around you.", "answer": "Psychic", "source": "Generic Psychic"},
+    {"quote": "The unexamined life is not worth living.", "answer": "Philosopher", "source": "Socrates"},
+    {"quote": "You will find love soon.", "answer": "Psychic", "source": "Generic Psychic"},
+    {"quote": "Happiness is not an ideal of reason but of imagination.", "answer": "Philosopher", "source": "Immanuel Kant"},
+    {"quote": "You have a very strong energy field.", "answer": "Psychic", "source": "Generic Psychic"},
+]
+
+def main():
+    st.title("Philosopher or Psychic?")
+
+    st.write("Decide if the following quotes are from a famous philosopher or a psychic.")
+
+    score = 0
+    total_questions = len(quiz_data)
+
+    for i, item in enumerate(quiz_data):
+        st.write(f"Quote {i + 1}: {item['quote']}")
+        user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}")
+
+        if user_answer:
+            if user_answer == item["answer"]:
+                st.success(f"Correct! This quote is from {item['source']}.")
+                score += 1
+            else:
+                st.error(f"Incorrect. This quote is from {item['source']}.")
+
+    st.write(f"Your final score is {score} out of {total_questions}")
             
 if __name__ == "__main__":
     main()
