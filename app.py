@@ -75,34 +75,6 @@ def philosopher_or_psychic():
 
     st.write(f"Your final score is {score} out of {total_questions}")
 
-    st.title("Philosopher or Psychic?")
-    st.write("Decide if the following quotes are from a famous philosopher or a psychic.")
-
-    score = 0
-    total_questions = len(quiz_data)
-
-    for i, item in enumerate(quiz_data):
-        if f"answered_{i}" not in st.session_state:
-            st.session_state[f"answered_{i}"] = False
-
-        st.write(f"Quote {i + 1}: {item['quote']}")
-        if not st.session_state[f"answered_{i}"]:
-            user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}")
-
-            if st.button(f"Submit Answer {i + 1}", key=f"submit_{i}"):
-                st.session_state[f"user_answer_{i}"] = user_answer
-                st.session_state[f"answered_{i}"] = True
-
-        if st.session_state[f"answered_{i}"]:
-            user_answer = st.session_state[f"user_answer_{i}"]
-            if user_answer == item["answer"]:
-                st.success(f"Correct! This quote is from {item['source']}.")
-                score += 1
-            else:
-                st.error(f"Incorrect. This quote is from {item['source']}.")
-
-    st.write(f"Your final score is {score} out of {total_questions}")
-
 def main():
     st.title("Decrypt the Code to Access a Special Message")
 
@@ -132,6 +104,14 @@ def main():
             if user_input2:
                 if user_input2 == "123":
                     st.success("Congratulations! You've cracked John's password.")
+                    st.write("Download your special sticker below:")
+                    with open("sticker.png", "rb") as file:
+                        btn = st.download_button(
+                            label="Download Sticker",
+                            data=file,
+                            file_name="sticker.png",
+                            mime="image/png"
+                        )
                     philosophical_puzzle_solver()
                     philosopher_or_psychic()
                 else:
