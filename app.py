@@ -37,6 +37,7 @@ def main():
             st.write(f"[Your YouTube Video]({youtube_link})")
 
             # Second challenge
+            st.title("Super Secret Password Hacker")
             st.write("Now, crack John's computer password:")
             st.write("Hint: John only remembers up to three numbers at a time.")
             user_input2 = st.text_input("Enter John's password here:")
@@ -57,8 +58,8 @@ def main():
     
         if st.button("Submit"):
             if user_answer == correct_answer:
-                st.success("Correct! Here's a funny clip from the series.")
-                st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")  # Replace with actual clip
+                st.success("Correct! Here is a clip from behind the scenes.")
+                st.video("https://www.youtube.com/watch?v=rG5iCV4xza4&t=46s&ab_channel=ReelStreamVenture")  # Replace with actual clip
             else:
                 st.error("Incorrect! Try again.")
             
