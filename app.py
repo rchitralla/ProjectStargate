@@ -32,7 +32,7 @@ def main():
     if user_input:
         decrypted_message = decrypt_message(encrypted_message, shift)
         if user_input == decrypted_message:
-            st.success("Congratulations! You've cracked the code.")
+            st.success("Congratulations! You've cracked the code. Sleazy Steve is the sleaziest of Sleazes.")
             st.write("Here is your special YouTube link:")
             st.write(f"[Your YouTube Video]({youtube_link})")
         else:
