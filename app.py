@@ -17,13 +17,14 @@ def decrypt_message(encrypted_message, shift):
     return encrypt_message(encrypted_message, -shift)
 
 def main():
-    st.title("Decrypt the Code to Access the YouTube Link")
+    st.title("Decrypt the Code to Access a Special Message")
 
     # Encrypted message and the shift value
-    encrypted_message = "Khoor Zruog"
+    encrypted_message = "VoHD]+=9YHyHY"
     shift = 3
+    youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
 
-    st.write("Decrypt the following message to get the YouTube link:")
+    st.write("Decrypt the following message to get a special YouTube link:")
     st.write(f"Encrypted message: **{encrypted_message}**")
 
     user_input = st.text_input("Enter the decrypted message here:")
@@ -32,8 +33,8 @@ def main():
         decrypted_message = decrypt_message(encrypted_message, shift)
         if user_input == decrypted_message:
             st.success("Congratulations! You've cracked the code.")
-            st.write("Here is your YouTube link:")
-            st.write("[Your YouTube Video](https://www.youtube.com/watch?v=dQw4w9WgXcQ)")
+            st.write("Here is your special YouTube link:")
+            st.write(f"[Your YouTube Video]({youtube_link})")
         else:
             st.error("Incorrect. Try again!")
 
