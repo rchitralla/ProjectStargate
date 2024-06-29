@@ -109,8 +109,8 @@ def main():
                         btn = st.download_button(
                             label="Download Sticker",
                             data=file,
-                            file_name="sticker.png",
-                            mime="image/png"
+                            file_name="Sure_Drink.pdf",
+                            mime="image/pdf"
                         )
                     philosophical_puzzle_solver()
                     philosopher_or_psychic()
