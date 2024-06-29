@@ -37,7 +37,7 @@ def main():
             st.write(f"[Your YouTube Video]({youtube_link})")
 
             # Second challenge
-            st.write("Now, crack John's password:")
+            st.write("Now, crack John's computer password:")
             st.write("Hint: John only remembers up to three numbers at a time.")
             user_input2 = st.text_input("Enter John's password here:")
 
