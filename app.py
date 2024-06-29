@@ -61,7 +61,7 @@ def philosopher_or_psychic():
     st.write(f"Your final score is {score} out of {total_questions}")
 
 def main():
-    st.title("Decrypt the Code to Access a Special Message")
+    st.title("Project Stargate - an unscientific comedy: Decrypt the Code to Access our Secrets")
 
     # New riddle and the answer
     riddle = "I am a word often used to describe someone who is disreputable or dishonest. I rhyme with 'breezy' but mean something far from pleasant. What am I?"
