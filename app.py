@@ -1,22 +1,6 @@
 import streamlit as st
 import os
 
-def encrypt_message(message, shift):
-    encrypted = ""
-    for char in message:
-        if char.isalpha():
-            shift_amount = shift % 26
-            new_char = chr(ord(char) + shift_amount)
-            if char.islower() and new_char > 'z' or char.isupper() and new_char > 'Z':
-                new_char = chr(ord(new_char) - 26)
-            encrypted += new_char
-        else:
-            encrypted += char
-    return encrypted
-
-def decrypt_message(encrypted_message, shift):
-    return encrypt_message(encrypted_message, -shift)
-
 def philosophical_puzzle_solver():
     st.title("Philosophical Puzzle Solver")
     st.write("Solve the following philosophical puzzle to proceed:")
@@ -79,20 +63,19 @@ def philosopher_or_psychic():
 def main():
     st.title("Decrypt the Code to Access a Special Message")
 
-    # First encrypted message and the shift value
-    encrypted_message1 = "Vohdcb Vwhyh"
-    shift1 = 3
+    # New riddle and the answer
+    riddle = "I am a word often used to describe someone who is disreputable or dishonest. I rhyme with 'breezy' but mean something far from pleasant. What am I?"
+    correct_answer = "Sleazy"
     youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
 
-    st.write("Decrypt the following message to get a special YouTube link (Hint: It's an ancient encryption method):")
-    st.write(f"Encrypted message: **{encrypted_message1}**")
+    st.write("Solve the following riddle to get a special YouTube link:")
+    st.write(f"Riddle: **{riddle}**")
 
-    user_input1 = st.text_input("Enter the decrypted message here:", key="input1")
+    user_input1 = st.text_input("Enter the answer here:", key="input1")
 
     if user_input1:
-        decrypted_message1 = decrypt_message(encrypted_message1, shift1)
-        if user_input1 == decrypted_message1:
-            st.success("Congratulations! You've cracked the first code. Sleazy Steve is the sleaziest of Sleazes.")
+        if user_input1.lower() == correct_answer.lower():
+            st.success("Congratulations! You've solved the riddle. Sleazy Steve is the sleaziest of Sleazes.")
             st.write("Here is your special YouTube link:")
             st.write(f"[Your YouTube Video]({youtube_link})")
 
