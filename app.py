@@ -58,12 +58,13 @@ def philosopher_or_psychic():
         st.write(f"Quote {i + 1}: {item['quote']}")
         user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}")
 
-        if user_answer:
-            if user_answer == item["answer"]:
-                st.success(f"Correct! This quote is from {item['source']}.")
-                score += 1
-            else:
-                st.error(f"Incorrect. This quote is from {item['source']}.")
+        if st.button(f"Submit Answer {i + 1}"):
+            if user_answer:
+                if user_answer == item["answer"]:
+                    st.success(f"Correct! This quote is from {item['source']}.")
+                    score += 1
+                else:
+                    st.error(f"Incorrect. This quote is from {item['source']}.")
 
     st.write(f"Your final score is {score} out of {total_questions}")
 
@@ -75,7 +76,7 @@ def main():
     shift1 = 3
     youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
 
-    st.write("Decrypt the following message to get a special YouTube link (Note: It's an old encryption method):")
+    st.write("Decrypt the following message to get a special YouTube link:")
     st.write(f"Encrypted message: **{encrypted_message1}**")
 
     user_input1 = st.text_input("Enter the decrypted message here:", key="input1")
@@ -95,7 +96,7 @@ def main():
 
             if user_input2:
                 if user_input2 == "123":
-                    st.success("Congratulations! You've cracked John's password. He really is THAT stupid.")
+                    st.success("Congratulations! You've cracked John's password.")
                     philosophical_puzzle_solver()
                     philosopher_or_psychic()
                 else:
