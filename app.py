@@ -76,7 +76,17 @@ def philosopher_or_psychic():
             st.error("The file ProjectStargate_Poster_4K.png was not found.")
 
 def main():
-    st.title("Project Stargate - an unscientific comedy: Decrypt the Code to Access our Secrets")
+    st.title("Project Stargate - an unscientific comedy")
+
+    # Description of the pilot episode project
+    st.write("""
+    **PROJECT STARGATE**
+
+    This uproarious comedy follows John, an underemployed philosophy grad, who accidentally infiltrates the Department of Inexplicable Affairs (DIA) after being mistaken for a deceased psychic prodigy.
+    Thrust into a world of psychic espionage he's hilariously unprepared for, John relies on his philosophical insights and knack for improvisation.
+    His only ally is a cryptic janitor with a thick Russian accent and mysterious proverbs. Together, they navigate absurd bureaucratic challenges and over-the-top missions, with John's pseudo-philosophical babble inadvertently solving real psychic mysteries.
+    This series blends bureaucratic absurdity with psychic phenomena, creating a world where the only thing taken seriously is the art of not taking anything seriously.
+    """)
 
     # New riddle and the answer
     riddle = "I am a word often used to describe someone who is disreputable or dishonest. I rhyme with 'breezy' but mean something far from pleasant. What am I?"
@@ -121,14 +131,11 @@ def main():
 
     st.write("Created by Regina Chitralla")
 
-    # Add PayPal donation button
+    # Add PayPal donation button using iframe
     st.markdown(
         """
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="hidden" name="hosted_button_id" value="8TTFV24WNWLS4" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-        <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
-        </form>
+        <iframe src="https://www.paypal.com/donate?hosted_button_id=8TTFV24WNWLS4" 
+        style="border:0; width:340px; height:100px;" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
         """,
         unsafe_allow_html=True
     )
