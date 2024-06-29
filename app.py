@@ -16,6 +16,24 @@ def encrypt_message(message, shift):
 def decrypt_message(encrypted_message, shift):
     return encrypt_message(encrypted_message, -shift)
 
+def philosophical_puzzle_solver():
+    st.title("Philosophical Puzzle Solver")
+    st.write("Solve the following philosophical puzzle to proceed:")
+
+    puzzle = "I think, therefore I am. Who said this famous quote?"
+    options = ["Plato", "Aristotle", "Descartes", "Socrates"]
+    correct_answer = "Descartes"
+    
+    user_answer = st.radio(puzzle, options, index=-1)  # index=-1 ensures no option is pre-selected
+    
+    if st.button("Submit Puzzle Answer"):
+        if user_answer:
+            if user_answer == correct_answer:
+                st.success("Correct! Here is a clip from behind the scenes.")
+                st.video("https://www.youtube.com/watch?v=rG5iCV4xza4&t=46s&ab_channel=ReelStreamVenture")  # Replace with actual clip
+            else:
+                st.error("Incorrect! Try again.")
+
 def philosopher_or_psychic():
     # Quotes or scenarios with their correct answers
     quiz_data = [
@@ -38,7 +56,7 @@ def philosopher_or_psychic():
 
     for i, item in enumerate(quiz_data):
         st.write(f"Quote {i + 1}: {item['quote']}")
-        user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}")
+        user_answer = st.radio("Is this quote from a Philosopher or a Psychic?", ("Philosopher", "Psychic"), key=f"quiz_{i}", index=-1)  # index=-1 ensures no option is pre-selected
 
         if user_answer:
             if user_answer == item["answer"]:
@@ -78,6 +96,7 @@ def main():
             if user_input2:
                 if user_input2 == "123":
                     st.success("Congratulations! You've cracked John's password.")
+                    philosophical_puzzle_solver()
                     philosopher_or_psychic()
                 else:
                     st.error("Incorrect password. Try again!")
