@@ -6,6 +6,13 @@ load_dotenv()
 
 PAYPAL_BUTTON_ID = os.getenv("PAYPAL_BUTTON_ID")
 
+# Initialize the counter in session state
+if "page_visits" not in st.session_state:
+    st.session_state.page_visits = 0
+
+# Increment the counter
+st.session_state.page_visits += 1
+
 def philosophical_puzzle_solver():
     st.title("Philosophical Puzzle Solver")
     st.write("Solve the following philosophical puzzle to proceed:")
@@ -169,11 +176,14 @@ def main():
         unsafe_allow_html=True
     )
 
-    # Smaller credit text at the bottom
+    # Smaller credit text and visitor counter at the bottom
     st.markdown(
-        """
+        f"""
         <div style='text-align: center; margin-top: 50px; font-size: 12px;'>
             Created by Regina Chitralla
+        </div>
+        <div style='text-align: center; font-size: 12px;'>
+            Page Visits: {st.session_state.page_visits}
         </div>
         """,
         unsafe_allow_html=True
