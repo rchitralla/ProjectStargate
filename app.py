@@ -186,4 +186,7 @@ if __name__ == "__main__":
         st.session_state.password_solved = False
     if "puzzle_solved" not in st.session_state:
         st.session_state.puzzle_solved = False
-    if "quiz_solved" not in st.session
+    if "quiz_solved" not in st.session_state:
+        st.session_state.quiz_solved = False
+    
+    main()
