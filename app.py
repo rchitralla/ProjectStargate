@@ -1,5 +1,10 @@
 import streamlit as st
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+PAYPAL_BUTTON_ID = os.getenv("PAYPAL_BUTTON_ID")
 
 def philosophical_puzzle_solver():
     st.title("Philosophical Puzzle Solver")
@@ -136,8 +141,8 @@ def main():
 
     # Add PayPal donation button as a clickable link styled as a button
     st.markdown(
-        """
-        <a href="https://www.paypal.com/donate?hosted_button_id=8TTFV24WNWLS4" target="_blank">
+        f"""
+        <a href="https://www.paypal.com/donate?hosted_button_id={PAYPAL_BUTTON_ID}" target="_blank">
             <button style="background-color:#4CAF50; border:none; color:white; padding:15px 32px; text-align:center; text-decoration:none; display:inline-block; font-size:16px; margin:4px 2px; cursor:pointer;">
                 Donate via PayPal
             </button>
