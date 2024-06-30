@@ -31,8 +31,8 @@ def philosopher_or_psychic():
         {"quote": "I see a great change coming into your life, possibly involving switching your style to the 70's look.", "answer": "Psychic", "source": "Generic Psychic"},
         {"quote": "To be is to do.", "answer": "Philosopher", "source": "Socrates"},
         {"quote": "I sense a strong energy around you, likely from that disco fever.", "answer": "Psychic", "source": "Generic Psychic"},
-        {"quote": "Happiness is not an ideal of reason but of imagination.", "answer": "Philosopher", "source": "Immanuel Kant"},
         {"quote": "I see you remote viewing your fridge late at night.", "answer": "Psychic", "source": "Generic Psychic"},
+        {"quote": "Happiness is not an ideal of reason but of imagination.", "answer": "Philosopher", "source": "Immanuel Kant"},
     ]
 
     st.title("Philosopher or Psychic?")
