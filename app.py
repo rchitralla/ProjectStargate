@@ -135,7 +135,7 @@ def main():
     # New riddle and the answer
     riddle = "I am a word often used to describe someone who is disreputable or dishonest. I rhyme with 'breezy' but mean something far from pleasant. What am I?"
     correct_answer = "Sleazy"
-    youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # Replace with your actual "Sleazy Steve" YouTube link
+    youtube_link = "https://www.youtube.com/watch?v=rBaPzVYMnJs&ab_channel=ReelStreamVenture"  # Replace with your actual "Sleazy Steve" YouTube link
 
     st.write("Solve the following riddle to get a special YouTube link:")
     st.write(f"Riddle: **{riddle}**")
