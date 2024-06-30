@@ -89,9 +89,9 @@ def main():
     The comedy follows John, an underemployed philosophy grad, who infiltrates the Department of Inexplicable Affairs (DIA) because his nemesis ´Sleazy Steve´ leads him there. 
     Being mistaken for a deceased psychic rockstar, he lands a job. 
     Thrust into a world of psychic espionage he's hilariously unprepared for, John relies on his philosophical insights and knack for improvisation.
-    His only ally is a cryptic janitor with a thick Russian accent and mysterious proverbs. 
 
     After solving the riddles, you will be able to watch the trailer and hopefully you like it so much, you want to support us with a donation. 
+    If we manage to collect enough, we'll be able to produce more episodes. 
     """)
 
     # New riddle and the answer
