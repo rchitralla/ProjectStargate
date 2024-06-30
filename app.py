@@ -133,14 +133,16 @@ def main():
                     else:
                         st.error("The file Sure_Drink.pdf was not found.")
                     
-                    # Add the new lottery numbers question
-                    st.title("Guess the Next Lottery Numbers")
-                    lottery_input = st.text_input("Enter your guess for the next lottery numbers:")
-                    if lottery_input:
-                        st.success("Congrats, you passed and are hired!")
-                    
                     philosophical_puzzle_solver()
                     philosopher_or_psychic()
+
+                    # Add the new lottery numbers question at the end
+                    st.title("Guess the Next Lottery Numbers")
+                    st.write("Clairvoyance is an important skill, hence you should be able to foresee the lottery numbers.")
+                    lottery_input = st.text_input("Enter your guess for the next lottery numbers:")
+
+                    if lottery_input:
+                        st.success("Congrats, you passed and are hired!")
                 else:
                     st.error("Incorrect password. Try again!")
 
