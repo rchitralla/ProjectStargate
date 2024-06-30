@@ -21,6 +21,7 @@ def philosophical_puzzle_solver():
             if user_answer == correct_answer:
                 st.success("Correct! Here is a clip from behind the scenes.")
                 st.video("https://www.youtube.com/watch?v=rG5iCV4xza4&t=46s&ab_channel=ReelStreamVenture")  # Replace with actual clip
+                st.session_state.puzzle_solved = True
             else:
                 st.error("Incorrect! Try again.")
 
@@ -79,6 +80,7 @@ def philosopher_or_psychic():
                 )
         else:
             st.error("The file ProjectStargate_Poster_4K.png was not found.")
+        st.session_state.quiz_solved = True
 
 def main():
     st.title("Project Stargate - an unscientific comedy")
@@ -111,44 +113,51 @@ def main():
             st.success("Congratulations! You've solved the riddle. Sleazy Steve is the sleaziest of Sleazes.")
             st.write("Here is your special YouTube link:")
             st.write(f"[Your YouTube Video]({youtube_link})")
-
-            # Second challenge
-            st.title("Super Secret Password Hacker")
-            st.write("Now, crack John's computer password:")
-            st.write("Hint: John only remembers up to three numbers at a time.")
-            user_input2 = st.text_input("Enter John's password here:", key="input2")
-
-            if user_input2:
-                if user_input2 == "123":
-                    st.success("Congratulations! You've cracked John's password.")
-                    st.write("Download your special sticker below:")
-                    if os.path.exists("Sure_Drink.pdf"):
-                        with open("Sure_Drink.pdf", "rb") as file:
-                            btn = st.download_button(
-                                label="Download Sticker",
-                                data=file,
-                                file_name="Sure_Drink.pdf",
-                                mime="application/pdf"
-                            )
-                    else:
-                        st.error("The file Sure_Drink.pdf was not found.")
-                    
-                    philosophical_puzzle_solver()
-                    philosopher_or_psychic()
-
-                    # Add the new lottery numbers question at the end
-                    st.title("Guess the Next Lottery Numbers")
-                    st.write("Clairvoyance is an important skill, hence you should be able to foresee the lottery numbers.")
-                    lottery_input = st.text_input("Enter your guess for the next lottery numbers:")
-
-                    if lottery_input:
-                        st.success("Congrats, you passed and are hired!")
-                else:
-                    st.error("Incorrect password. Try again!")
+            st.session_state.riddle_solved = True
         elif user_input1.lower() == "sleezy":
             st.warning("Almost correct, try again.")
         else:
             st.error("Incorrect! Try again.")
+
+    if st.session_state.get("riddle_solved"):
+        # Second challenge
+        st.title("Super Secret Password Hacker")
+        st.write("Now, crack John's computer password:")
+        st.write("Hint: John only remembers up to three numbers at a time.")
+        user_input2 = st.text_input("Enter John's password here:", key="input2")
+
+        if user_input2:
+            if user_input2 == "123":
+                st.success("Congratulations! You've cracked John's password.")
+                st.write("Download your special sticker below:")
+                if os.path.exists("Sure_Drink.pdf"):
+                    with open("Sure_Drink.pdf", "rb") as file:
+                        btn = st.download_button(
+                            label="Download Sticker",
+                            data=file,
+                            file_name="Sure_Drink.pdf",
+                            mime="application/pdf"
+                        )
+                else:
+                    st.error("The file Sure_Drink.pdf was not found.")
+                st.session_state.password_solved = True
+            else:
+                st.error("Incorrect password. Try again!")
+
+    if st.session_state.get("password_solved"):
+        philosophical_puzzle_solver()
+
+    if st.session_state.get("puzzle_solved"):
+        philosopher_or_psychic()
+
+    if st.session_state.get("quiz_solved"):
+        # Add the new lottery numbers question at the end
+        st.title("Guess the Next Lottery Numbers")
+        st.write("Clairvoyance is an important skill, hence you should be able to foresee the lottery numbers.")
+        lottery_input = st.text_input("Enter your guess for the next lottery numbers:")
+
+        if lottery_input:
+            st.success("Congrats, you passed and are hired!")
 
     st.write("Created by Regina Chitralla")
 
@@ -165,4 +174,13 @@ def main():
     )
 
 if __name__ == "__main__":
+    if "riddle_solved" not in st.session_state:
+        st.session_state.riddle_solved = False
+    if "password_solved" not in st.session_state:
+        st.session_state.password_solved = False
+    if "puzzle_solved" not in st.session_state:
+        st.session_state.puzzle_solved = False
+    if "quiz_solved" not in st.session_state:
+        st.session_state.quiz_solved = False
+    
     main()
