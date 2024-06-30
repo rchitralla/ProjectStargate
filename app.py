@@ -82,10 +82,13 @@ def main():
     st.write("""
     **PROJECT STARGATE**
 
-    This uproarious comedy follows John, an underemployed philosophy grad, who accidentally infiltrates the Department of Inexplicable Affairs (DIA) after being mistaken for a deceased psychic prodigy.
+    Congrats, you have been invited to the super secret recruitment program by Project Stargate - an unscientific comedy. 
+    The comedy follows John, an underemployed philosophy grad, who infiltrates the Department of Inexplicable Affairs (DIA) because his nemesis ´Sleazy Steve´ leads him there. 
+    Being mistaken for a deceased psychic rockstar, he lands a job. 
     Thrust into a world of psychic espionage he's hilariously unprepared for, John relies on his philosophical insights and knack for improvisation.
-    His only ally is a cryptic janitor with a thick Russian accent and mysterious proverbs. Together, they navigate absurd bureaucratic challenges and over-the-top missions, with John's pseudo-philosophical babble inadvertently solving real psychic mysteries.
-    This series blends bureaucratic absurdity with psychic phenomena, creating a world where the only thing taken seriously is the art of not taking anything seriously.
+    His only ally is a cryptic janitor with a thick Russian accent and mysterious proverbs. 
+
+    After solving the riddles, you will be able to watch the trailer and hopefully you like it so much, you want to support us with a donation. 
     """)
 
     # New riddle and the answer
