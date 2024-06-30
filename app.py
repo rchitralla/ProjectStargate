@@ -110,13 +110,14 @@ def main():
 
     # Display an image at the start
     st.markdown(
-    """
-    <div style='text-align: center;'>
-        <img src='Title.jpeg' width='300'>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+        """
+        <div style='text-align: center;'>
+            <img src='Title.jpeg' width='300'>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 
     # Description of the pilot episode project
     st.write("""
