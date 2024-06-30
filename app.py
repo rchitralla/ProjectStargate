@@ -111,10 +111,6 @@ def main():
             st.success("Congratulations! You've solved the riddle. Sleazy Steve is the sleaziest of Sleazes.")
             st.write("Here is your special YouTube link:")
             st.write(f"[Your YouTube Video]({youtube_link})")
-        elif user_input1.lower() == "sleezy":
-            st.warning("Almost correct, try again.")
-        else:
-            st.error("Incorrect! Try again.")
 
             # Second challenge
             st.title("Super Secret Password Hacker")
@@ -149,6 +145,10 @@ def main():
                         st.success("Congrats, you passed and are hired!")
                 else:
                     st.error("Incorrect password. Try again!")
+        elif user_input1.lower() == "sleezy":
+            st.warning("Almost correct, try again.")
+        else:
+            st.error("Incorrect! Try again.")
 
     st.write("Created by Regina Chitralla")
 
