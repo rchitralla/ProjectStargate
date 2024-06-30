@@ -118,9 +118,6 @@ def main():
     if "quiz_solved" not in st.session_state:
         st.session_state.quiz_solved = False
 
-    # Display an image at the start using st.image
-    st.image('Title.jpeg', caption='Project Stargate', width=300)
-
     # Description of the pilot episode project
     st.write("""
     **PROJECT STARGATE**
