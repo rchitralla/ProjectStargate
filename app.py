@@ -129,6 +129,7 @@ def main():
     His only ally is a cryptic janitor with a thick Russian accent and mysterious proverbs. 
 
     After solving the riddles, you will be able to watch the trailer and hopefully you like it so much, you want to support us with a donation. 
+    This will help us cover costs to submit our project to filmfestivals and increase visibility for all the hardworking project members. 
     """)
 
     # New riddle and the answer
