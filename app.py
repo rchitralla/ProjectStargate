@@ -112,7 +112,7 @@ def main():
     st.markdown(
     """
     <div style='text-align: center;'>
-        <img src='title.jpg' width='300'>
+        <img src='Title.jpeg' width='300'>
     </div>
     """,
     unsafe_allow_html=True
