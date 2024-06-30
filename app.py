@@ -108,6 +108,9 @@ def philosopher_or_psychic():
 def main():
     st.title("Project Stargate - an unscientific comedy")
 
+    # Display an image at the start
+    st.image("Title.jpeg", width=300)  # Adjust the width as necessary
+
     # Description of the pilot episode project
     st.write("""
     **PROJECT STARGATE**
