@@ -28,11 +28,13 @@ def philosopher_or_psychic():
     # Quotes or scenarios with their correct answers
     quiz_data = [
         {"quote": "The only true wisdom is in knowing you know nothing.", "answer": "Philosopher", "source": "Socrates"},
-        {"quote": "I see a great change coming into your life, possibly involving switching your style to the 70's look.", "answer": "Psychic", "source": "Generic Psychic"},
+        {"quote": "I see a great change coming into your life, possibly involving a new pair of bell-bottoms.", "answer": "Psychic", "source": "Generic Psychic"},
         {"quote": "To be is to do.", "answer": "Philosopher", "source": "Socrates"},
         {"quote": "I sense a strong energy around you, likely from that disco fever.", "answer": "Psychic", "source": "Generic Psychic"},
-        {"quote": "I see you remote viewing your fridge late at night.", "answer": "Psychic", "source": "Generic Psychic"},
+        {"quote": "The unexamined life is not worth living.", "answer": "Philosopher", "source": "Socrates"},
+        {"quote": "You will find love very soon, perhaps at the roller rink.", "answer": "Psychic", "source": "Generic Psychic"},
         {"quote": "Happiness is not an ideal of reason but of imagination.", "answer": "Philosopher", "source": "Immanuel Kant"},
+        {"quote": "I see you remote viewing your fridge late at night.", "answer": "Psychic", "source": "Generic Psychic"},
     ]
 
     st.title("Philosopher or Psychic?")
@@ -89,9 +91,9 @@ def main():
     The comedy follows John, an underemployed philosophy grad, who infiltrates the Department of Inexplicable Affairs (DIA) because his nemesis ´Sleazy Steve´ leads him there. 
     Being mistaken for a deceased psychic rockstar, he lands a job. 
     Thrust into a world of psychic espionage he's hilariously unprepared for, John relies on his philosophical insights and knack for improvisation.
+    His only ally is a cryptic janitor with a thick Russian accent and mysterious proverbs. 
 
     After solving the riddles, you will be able to watch the trailer and hopefully you like it so much, you want to support us with a donation. 
-    If we manage to collect enough, we'll be able to produce more episodes. 
     """)
 
     # New riddle and the answer
@@ -109,6 +111,10 @@ def main():
             st.success("Congratulations! You've solved the riddle. Sleazy Steve is the sleaziest of Sleazes.")
             st.write("Here is your special YouTube link:")
             st.write(f"[Your YouTube Video]({youtube_link})")
+        elif user_input1.lower() == "sleezy":
+            st.warning("Almost correct, try again.")
+        else:
+            st.error("Incorrect! Try again.")
 
             # Second challenge
             st.title("Super Secret Password Hacker")
