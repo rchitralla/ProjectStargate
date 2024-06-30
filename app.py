@@ -32,7 +32,7 @@ def philosopher_or_psychic():
         {"quote": "I see a great change coming into your life, possibly involving embracing that 70's look!", "answer": "Psychic", "source": "Generic Psychic"},
         {"quote": "To be is to do.", "answer": "Philosopher", "source": "Socrates"},
         {"quote": "I sense a strong energy around you, likely from that disco fever.", "answer": "Psychic", "source": "Generic Psychic"},
-         {"quote": "I see you remote viewing your fridge late at night.", "answer": "Psychic", "source": "Generic Psychic"},
+        {"quote": "I see you remote viewing your fridge late at night.", "answer": "Psychic", "source": "Generic Psychic"},
         {"quote": "Happiness is not an ideal of reason but of imagination.", "answer": "Philosopher", "source": "Immanuel Kant"},
     ]
 
@@ -157,8 +157,6 @@ def main():
         if lottery_input:
             st.success("Congrats, you passed and are hired!")
 
-    st.write("Created by Regina Chitralla")
-
     # Add PayPal donation button as a clickable link styled as a button
     st.markdown(
         f"""
@@ -171,6 +169,16 @@ def main():
         unsafe_allow_html=True
     )
 
+    # Smaller credit text at the bottom
+    st.markdown(
+        """
+        <div style='text-align: center; margin-top: 50px; font-size: 12px;'>
+            Created by Regina Chitralla
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 if __name__ == "__main__":
     if "riddle_solved" not in st.session_state:
         st.session_state.riddle_solved = False
@@ -178,7 +186,4 @@ if __name__ == "__main__":
         st.session_state.password_solved = False
     if "puzzle_solved" not in st.session_state:
         st.session_state.puzzle_solved = False
-    if "quiz_solved" not in st.session_state:
-        st.session_state.quiz_solved = False
-    
-    main()
+    if "quiz_solved" not in st.session
