@@ -1,17 +1,35 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
+from streamlit_cookies_manager import EncryptedCookieManager
 
+# Load environment variables
 load_dotenv()
 
+# Initialize cookies manager
+cookies = EncryptedCookieManager(prefix="pg_", password="a_secure_password_key")
+if not cookies.ready():
+    st.stop()
+
+# PayPal button ID
 PAYPAL_BUTTON_ID = os.getenv("PAYPAL_BUTTON_ID")
 
 # Initialize the counter in session state
-if "page_visits" not in st.session_state:
-    st.session_state.page_visits = 0
+if "unique_visits" not in st.session_state:
+    if not cookies.get("visit_count"):
+        cookies["visit_count"] = "1"
+        st.session_state.unique_visits = 1
+    else:
+        st.session_state.unique_visits = int(cookies.get("visit_count"))
 
-# Increment the counter
-st.session_state.page_visits += 1
+def increment_unique_visits():
+    st.session_state.unique_visits += 1
+    cookies["visit_count"] = str(st.session_state.unique_visits)
+
+# Increment the counter if the user is new
+if not cookies.get("user_visited"):
+    cookies["user_visited"] = "true"
+    increment_unique_visits()
 
 def philosophical_puzzle_solver():
     st.title("Philosophical Puzzle Solver")
@@ -183,7 +201,7 @@ def main():
             Created by Regina Chitralla
         </div>
         <div style='text-align: center; font-size: 12px;'>
-            Page Visits: {st.session_state.page_visits}
+            Unique Page Visits: {st.session_state.unique_visits}
         </div>
         """,
         unsafe_allow_html=True
