@@ -109,7 +109,14 @@ def main():
     st.title("Project Stargate - an unscientific comedy")
 
     # Display an image at the start
-    st.image("Title.jpeg", width=300)  # Adjust the width as necessary
+    st.markdown(
+    """
+    <div style='text-align: center;'>
+        <img src='title.jpg' width='300'>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     # Description of the pilot episode project
     st.write("""
