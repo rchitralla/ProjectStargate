@@ -192,6 +192,8 @@ def main():
 
         if lottery_input:
             st.success("Congrats, you passed and are hired!")
+            st.write("Here is the trailer link as a reward for completing all challenges:")
+            st.write("[Watch the Trailer](https://youtu.be/rZsMSyfEiY0)")
 
     # Add PayPal donation button as a clickable link styled as a button
     st.markdown(
